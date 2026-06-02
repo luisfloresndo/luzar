@@ -1,0 +1,102 @@
+@import "tailwindcss";
+/* Fuentes (Clash Display + General Sans) se cargan vía <link> en layout.tsx */
+
+/* ════════════════════════════════════════════════════════════
+   LUZAR — Sistema de tokens de marca (brandbook oficial)
+   Navy #1B2F6E (autoridad) + Verde #3AB548 (crecimiento · solo CTA/acento)
+   Estilo: Trust & Authority · Light por defecto
+   ════════════════════════════════════════════════════════════ */
+:root {
+  /* Marca */
+  --navy: #1b2f6e;
+  --navy-deep: #0d1b44;
+  --green: #3ab548;
+  --green-dark: #2a8a35;
+  --green-soft: #e8f8ea;
+
+  /* Superficies */
+  --background: #f7f8fc;
+  --surface: #ffffff;
+  --foreground: #0d1b44;
+  --muted: #e8ecf7;
+  --muted-foreground: #5b6385;
+  --border: #dde0ec;
+
+  /* Tokens shadcn (mapeados a marca) */
+  --card: #ffffff;
+  --card-foreground: var(--foreground);
+  --popover: #ffffff;
+  --popover-foreground: var(--foreground);
+  --primary: var(--navy);
+  --primary-foreground: #ffffff;
+  --secondary: var(--muted);
+  --secondary-foreground: var(--navy);
+  --accent: var(--green);
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --input: var(--border);
+  --ring: var(--navy);
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-green: var(--green);
+  --color-green-dark: var(--green-dark);
+  --color-green-soft: var(--green-soft);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-display: "Clash Display", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "General Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; /* respeta accesibilidad: desactiva animación */
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

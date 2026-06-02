@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luzar — Identidad de Marca</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #3AB548;
+    --green-dark: #2A8A35;
+    --green-light: #E8F8EA;
+    --green-mid: #C2EAC5;
+    --navy: #1B2F6E;
+    --navy-dark: #0D1B44;
+    --navy-light: #E8ECF7;
+    --navy-mid: #B8C3E3;
+    --white: #FFFFFF;
+    --off-white: #F7F8FC;
+    --gray-100: #F0F1F5;
+    --gray-200: #DDE0EC;
+    --gray-400: #8A90AD;
+    --gray-700: #3D4060;
+    --font-main: 'Montserrat', sans-serif;
+    --font-serif: 'Lora', serif;
+  }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--off-white);
+    color: var(--navy-dark);
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .brand-header {
+    background: var(--navy-dark);
+    padding: 3rem 4rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .brand-header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border: 2px solid rgba(58,181,72,0.15);
+    border-radius: 50%;
+  }
+  .brand-header::after {
+    content: '';
+    position: absolute;
+    top: 40px; right: 40px;
+    width: 180px; height: 180px;
+    border: 1.5px solid rgba(58,181,72,0.1);
+    border-radius: 50%;
+  }
+  .brand-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+  .brand-title {
+    color: var(--white);
+  }
+  .brand-title h1 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 8px;
+  }
+  .brand-title h2 {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+  .brand-title p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--navy-mid);
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .brand-badge {
+    background: rgba(58,181,72,0.12);
+    border: 1px solid rgba(58,181,72,0.3);
+    border-radius: 8px;
+    padding: 16px 22px;
+    text-align: center;
+  }
+  .brand-badge span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+  }
+  .brand-badge strong {
+    display: block;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--white);
+    margin-top: 4px;
+  }
+
+  /* SECTION WRAPPER */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 4rem;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--navy-dark);
+    margin-bottom: 2rem;
+  }
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--gray-200);
+    margin: 0;
+  }
+
+  /* COLOR PALETTE */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin-bottom: 2rem;
+  }
+  .color-chip {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+  }
+  .color-swatch {
+    height: 80px;
+    width: 100%;
+  }
+  .color-info {
+    background: var(--white);
+    padding: 12px 14px;
+  }
+  .color-info .name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy-dark);
+  }
+  .color-info .hex {
+    font-size: 12px;
+    color: var(--gray-400);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+  .color-info .role {
+    font-size: 11px;
+    color: var(--gray-400);
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  /* TYPOGRAPHY */
+  .type-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .type-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .type-tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .type-display {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--navy-dark);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .type-sizes {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .type-sizes span { color: var(--navy-dark); }
+
+  /* LOGO VARIATIONS */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .logo-box {
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border: 1px solid var(--gray-200);
+    min-height: 180px;
+  }
+  .logo-box .var-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .logo-box.white { background: var(--white); }
+  .logo-box.white .var-label { color: var(--gray-400); }
+  .logo-box.navy { background: var(--navy-dark); border-color: transparent; }
+  .logo-box.navy .var-label { color: var(--navy-mid); }
+  .logo-box.green { background: var(--green); border-color: transparent; }
+  .logo-box.green .var-label { color: rgba(255,255,255,0.7); }
+  .logo-box.gray-bg { background: var(--gray-100); }
+  .logo-box.gray-bg .var-label { color: var(--gray-400); }
+
+  /* INLINE SVG LOGO */
+  .logo-svg { width: 160px; height: auto; }
+
+  /* TAGLINES */
+  .tagline-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .tagline-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .tagline-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px; left: 16px;
+    font-size: 80px;
+    font-family: var(--font-serif);
+    color: var(--green-mid);
+    line-height: 1;
+  }
+  .tagline-card blockquote {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-style: italic;
+    color: var(--navy-dark);
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+    margin-top: 16px;
+  }
+  .tagline-card .tag-use {
+    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  /* STATIONERY */
+  .stationery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+  }
+
+  /* BUSINESS CARD */
+  .biz-card {
+    width: 100%;
+    aspect-ratio: 1.75;
+    border-radius: 12px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(27,47,110,0.12);
+  }
+  .biz-card-front {
+    background: var(--navy-dark);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .biz-card-front::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border: 1.5px solid rgba(58,181,72,0.2);
+    border-radius: 50%;
+  }
+  .biz-card-front::before {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 140px; height: 140px;
+    border: 1px solid rgba(58,181,72,0.1);
+    border-radius: 50%;
+    transform: translate(30%, 30%);
+  }
+  .biz-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .biz-title {
+    font-size: 11px;
+    color: var(--green);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .biz-contact {
+    font-size: 11px;
+    color: var(--navy-mid);
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+  }
+  .biz-contact span {
+    display: block;
+  }
+
+  /* LETTERHEAD */
+  .letterhead {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .letterhead-header {
+    background: var(--navy-dark);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .letterhead-body {
+    padding: 2rem;
+  }
+  .letterhead-line {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .line-placeholder {
+    height: 10px;
+    background: var(--gray-100);
+    border-radius: 4px;
+  }
+  .letterhead-footer {
+    background: var(--green);
+    padding: 0.75rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .letterhead-footer span {
+    font-size: 10px;
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* BRAND VOICE */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .voice-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .voice-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 24px;
+  }
+  .voice-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 6px;
+  }
+  .voice-card p {
+    font-size: 12px;
+    color: var(--gray-400);
+    line-height: 1.5;
+  }
+
+  /* DIGITAL COMPONENTS */
+  .component-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* BUTTON STYLES */
+  .btn-showcase {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    align-items: center;
+  }
+  .btn {
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--green); color: var(--white); }
+  .btn-secondary { background: var(--navy-dark); color: var(--white); }
+  .btn-outline { background: transparent; color: var(--navy-dark); border-color: var(--navy-dark); }
+  .btn-ghost { background: transparent; color: var(--green); border-color: var(--green); }
+  .btn-sm { padding: 7px 16px; font-size: 12px; }
+  .btn-lg { padding: 14px 30px; font-size: 15px; }
+
+  /* FORM */
+  .form-showcase {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .form-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .form-title span {
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: var(--green);
+    border-radius: 2px;
+  }
+  .form-field {
+    margin-bottom: 14px;
+  }
+  .form-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 5px;
+    display: block;
+  }
+  .form-input {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 6px;
+    font-family: var(--font-main);
+    font-size: 13px;
+    color: var(--navy-dark);
+    background: var(--off-white);
+  }
+  .form-input:focus { outline: none; border-color: var(--green); }
+  .form-submit {
+    width: 100%;
+    padding: 11px;
+    background: var(--green);
+    color: var(--white);
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+
+  /* ICON STAMP */
+  .pattern-showcase {
+    background: var(--navy-dark);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .pattern-item {
+    text-align: center;
+  }
+  .pattern-item p {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy-mid);
+    margin-top: 10px;
+    font-weight: 600;
+  }
+
+  /* BRAND SECTION */
+  .brand-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .value-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 1.75rem;
+    border-top: 3px solid var(--green);
+  }
+  .value-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .value-card h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--navy-dark);
+    margin-bottom: 8px;
+  }
+  .value-card p {
+    font-size: 13px;
+    color: var(--gray-400);
+    line-height: 1.6;
+  }
+
+  /* SOCIAL MEDIA */
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .social-post {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+  }
+  .post-image {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .post-caption {
+    background: var(--white);
+    padding: 14px;
+  }
+  .post-caption p {
+    font-size: 12px;
+    color: var(--navy-dark);
+    line-height: 1.4;
+  }
+  .post-caption .hashtags {
+    font-size: 11px;
+    color: var(--green);
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  .brand-footer {
+    background: var(--navy-dark);
+    padding: 2.5rem 4rem;
+    text-align: center;
+  }
+  .brand-footer p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--navy-mid);
+    font-weight: 600;
+  }
+  .brand-footer span {
+    color: var(--green);
+  }
+
+  @media (max-width: 768px) {
+    .section { padding: 2rem 1.5rem; }
+    .brand-header { padding: 2rem 1.5rem; }
+    .brand-header-inner { flex-direction: column; gap: 1.5rem; }
+    .type-showcase, .stationery-grid, .tagline-grid,
+    .component-grid, .social-grid, .logo-grid { grid-template-columns: 1fr; }
+    .voice-grid, .brand-values { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="brand-header">
+  <div class="brand-header-inner">
+    <div class="brand-title">
+      <h1>Manual de Identidad</h1>
+      <h2>Luzar<br>Brand Guidelines</h2>
+      <p>Consultoría Contable Fiscal · 2025</p>
+    </div>
+    <div class="brand-badge">
+      <span>Versión</span>
+      <strong>1.0</strong>
+      <span style="margin-top:4px;">2025</span>
+    </div>
+  </div>
+</div>
+
+<!-- PALETA DE COLORES -->
+<div class="section">
+  <p class="section-label">01 — Paleta de Color</p>
+  <h2 class="section-title">Colores Corporativos</h2>
+  <div class="palette-grid">
+    <div class="color-chip">
+      <div class="color-swatch" style="background:#3AB548;"></div>
+      <div class="color-info">
+        <div class="name">Verde Luzar</div>
+        <div class="hex">#3AB548</div>
+        <div class="role">Color principal</div>
+      </div>
+    </div>
+    <div class="color-chip">
+      <div class="color-swatch" style="background:#2A8A35;"></div>
+      <div class="color-info">
+        <div class="name">Verde Oscuro</div>
+        <div class="hex">#2A8A35</div>
+        <div class="role">Hover / énfasis</div>
+      </div>
+    </div>
+    <div class="color-chip">
+      <div class="color-swatch" style="background:#E8F8EA;"></div>
+      <div class="color-info">
+        <div class="name">Verde Claro</div>
+        <div class="hex">#E8F8EA</div>
+        <div class="role">Fondos / tints</div>
+      </div>
+    </div>
+    <div class="color-chip">
+      <div class="color-swatch" style="background:#1B2F6E;"></div>
+      <div class="color-info">
+        <div class="name">Azul Marino</div>
+        <div class="hex">#1B2F6E</div>
+        <div class="role">Color secundario</div>
+      </div>
+    </div>
+    <div class="color-chip">
+      <div class="color-swatch" style="background:#0D1B44;"></div>
+      <div class="color-info">
+        <div class="name">Marino Profundo</div>
+        <div class="hex">#0D1B44</div>
+        <div class="role">Textos / fondos</div>
+      </div>
+    </div>
+    <div class="color-chip">
+      <div class="color-swatch" style="background:#E8ECF7;"></div>
+      <div class="color-info">
+        <div class="name">Marino Claro</div>
+        <div class="hex">#E8ECF7</div>
+        <div class="role">Fondos suaves</div>
+      </div>
+    </div>
+    <div class="color-chip">
+      <div class="color-swatch" style="background:#FFFFFF; border-bottom: 1px solid #eee;"></div>
+      <div class="color-info">
+        <div class="name">Blanco</div>
+        <div class="hex">#FFFFFF</div>
+        <div class="role">Fondos limpios</div>
+      </div>
+    </div>
+    <div class="color-chip">
+      <div class="color-swatch" style="background:#F7F8FC;"></div>
+      <div class="color-info">
+        <div class="name">Blanco Frío</div>
+        <div class="hex">#F7F8FC</div>
+        <div class="role">Fondo de página</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLOR COMBINATIONS -->
+  <div style="display:grid; grid-template-columns: repeat(4,1fr); gap:12px; margin-top: 8px;">
+    <div style="border-radius:10px; overflow:hidden; border:1px solid var(--gray-200);">
+      <div style="background:var(--navy-dark); padding:20px; text-align:center;">
+        <span style="color:var(--green); font-weight:800; font-size:18px; letter-spacing:1px;">LUZAR</span>
+      </div>
+      <div style="background:var(--white); padding:8px; text-align:center; font-size:11px; color:var(--gray-400);">Marino + Verde</div>
+    </div>
+    <div style="border-radius:10px; overflow:hidden; border:1px solid var(--gray-200);">
+      <div style="background:var(--green); padding:20px; text-align:center;">
+        <span style="color:var(--white); font-weight:800; font-size:18px; letter-spacing:1px;">LUZAR</span>
+      </div>
+      <div style="background:var(--white); padding:8px; text-align:center; font-size:11px; color:var(--gray-400);">Verde + Blanco</div>
+    </div>
+    <div style="border-radius:10px; overflow:hidden; border:1px solid var(--gray-200);">
+      <div style="background:var(--white); padding:20px; text-align:center;">
+        <span style="color:var(--navy-dark); font-weight:800; font-size:18px; letter-spacing:1px;">LUZAR</span>
+      </div>
+      <div style="background:var(--white); padding:8px; text-align:center; font-size:11px; color:var(--gray-400);">Blanco + Marino</div>
+    </div>
+    <div style="border-radius:10px; overflow:hidden; border:1px solid var(--gray-200);">
+      <div style="background:var(--gray-100); padding:20px; text-align:center;">
+        <span style="color:var(--green-dark); font-weight:800; font-size:18px; letter-spacing:1px;">LUZAR</span>
+      </div>
+      <div style="background:var(--white); padding:8px; text-align:center; font-size:11px; color:var(--gray-400);">Neutro + Verde</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TIPOGRAFÍA -->
+<div class="section">
+  <p class="section-label">02 — Tipografía</p>
+  <h2 class="section-title">Sistema Tipográfico</h2>
+  <div class="type-showcase">
+    <div class="type-card">
+      <p class="type-tag">Fuente Principal — Montserrat</p>
+      <div class="type-display" style="color:var(--navy-dark);">Aa Bb Cc</div>
+      <div style="margin-top:16px; font-family:var(--font-main);">
+        <div style="margin-bottom:8px;">
+          <span style="font-size:28px; font-weight:800; color:var(--navy-dark);">Black 900 — Títulos</span>
+        </div>
+        <div style="margin-bottom:8px;">
+          <span style="font-size:22px; font-weight:700; color:var(--navy-dark);">Bold 700 — Subtítulos</span>
+        </div>
+        <div style="margin-bottom:8px;">
+          <span style="font-size:16px; font-weight:500; color:var(--navy);">Medium 500 — Destacados</span>
+        </div>
+        <div style="margin-bottom:8px;">
+          <span style="font-size:14px; font-weight:400; color:var(--gray-700);">Regular 400 — Texto base</span>
+        </div>
+        <div>
+          <span style="font-size:12px; font-weight:300; color:var(--gray-400);">Light 300 — Notas y captions</span>
+        </div>
+      </div>
+    </div>
+    <div class="type-card">
+      <p class="type-tag">Fuente Secundaria — Lora</p>
+      <div class="type-display" style="font-family:var(--font-serif); color:var(--green-dark); font-weight:600;">Aa Bb Cc</div>
+      <div style="margin-top:16px;">
+        <p style="font-family:var(--font-serif); font-size:22px; font-weight:600; color:var(--navy-dark); margin-bottom:8px;">Serif para énfasis editorial</p>
+        <p style="font-family:var(--font-serif); font-size:18px; font-style:italic; color:var(--navy); margin-bottom:8px;">"Claridad, Precisión y Confianza"</p>
+        <p style="font-family:var(--font-serif); font-size:14px; color:var(--gray-700); line-height:1.6;">Lora se usa para citas, taglines y momentos editoriales que requieren calidez y autoridad.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCALE -->
+  <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:12px; padding:2rem; margin-top:16px;">
+    <p class="type-tag" style="margin-bottom:16px;">Escala Tipográfica</p>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:baseline; gap:20px; padding-bottom:12px; border-bottom:1px solid var(--gray-100);">
+        <span style="font-size:11px; color:var(--gray-400); width:80px; flex-shrink:0;">H1 / 48px</span>
+        <span style="font-size:48px; font-weight:800; line-height:1; color:var(--navy-dark);">Título</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:20px; padding-bottom:12px; border-bottom:1px solid var(--gray-100);">
+        <span style="font-size:11px; color:var(--gray-400); width:80px; flex-shrink:0;">H2 / 32px</span>
+        <span style="font-size:32px; font-weight:700; line-height:1; color:var(--navy-dark);">Subtítulo Principal</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:20px; padding-bottom:12px; border-bottom:1px solid var(--gray-100);">
+        <span style="font-size:11px; color:var(--gray-400); width:80px; flex-shrink:0;">H3 / 22px</span>
+        <span style="font-size:22px; font-weight:600; color:var(--navy-dark);">Subtítulo Sección</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:20px; padding-bottom:12px; border-bottom:1px solid var(--gray-100);">
+        <span style="font-size:11px; color:var(--gray-400); width:80px; flex-shrink:0;">Body / 16px</span>
+        <span style="font-size:16px; color:var(--gray-700);">Texto de cuerpo para párrafos largos y descripciones.</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:20px;">
+        <span style="font-size:11px; color:var(--gray-400); width:80px; flex-shrink:0;">Small / 12px</span>
+        <span style="font-size:12px; color:var(--gray-400); letter-spacing:1px;">CAPTION · ETIQUETA · NOTA AL PIE</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- LOGO VARIATIONS -->
+<div class="section">
+  <p class="section-label">03 — Logotipo</p>
+  <h2 class="section-title">Variaciones del Logo</h2>
+  <div class="logo-grid">
+    <!-- Fondo blanco -->
+    <div class="logo-box white">
+      <svg class="logo-svg" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Icon -->
+        <rect x="2" y="2" width="64" height="64" rx="4" fill="#1B2F6E"/>
+        <polygon points="2,66 30,2 66,2 66,30 38,66" fill="#3AB548"/>
+        <polygon points="2,66 2,38 30,2" fill="#1B2F6E"/>
+        <rect x="16" y="16" width="36" height="36" rx="2" fill="white"/>
+        <text x="34" y="41" font-family="Montserrat,sans-serif" font-weight="900" font-size="22" fill="#1B2F6E" text-anchor="middle">Z</text>
+        <!-- Divider -->
+        <line x1="78" y1="8" x2="78" y2="68" stroke="#1B2F6E" stroke-width="1.5"/>
+        <!-- Wordmark -->
+        <text x="92" y="46" font-family="Montserrat,sans-serif" font-weight="800" font-size="30" fill="#3AB548" letter-spacing="2">LUZAR</text>
+        <text x="92" y="60" font-family="Montserrat,sans-serif" font-weight="500" font-size="8" fill="#1B2F6E" letter-spacing="3">CONSULTORÍA CONTABLE FISCAL</text>
+      </svg>
+      <span class="var-label">Fondo Blanco</span>
+    </div>
+    <!-- Fondo marino -->
+    <div class="logo-box navy">
+      <svg class="logo-svg" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="64" height="64" rx="4" fill="#3AB548"/>
+        <polygon points="2,66 30,2 66,2 66,30 38,66" fill="rgba(255,255,255,0.15)"/>
+        <rect x="16" y="16" width="36" height="36" rx="2" fill="white"/>
+        <text x="34" y="41" font-family="Montserrat,sans-serif" font-weight="900" font-size="22" fill="#1B2F6E" text-anchor="middle">Z</text>
+        <line x1="78" y1="8" x2="78" y2="68" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <text x="92" y="46" font-family="Montserrat,sans-serif" font-weight="800" font-size="30" fill="#FFFFFF" letter-spacing="2">LUZAR</text>
+        <text x="92" y="60" font-family="Montserrat,sans-serif" font-weight="500" font-size="8" fill="#B8C3E3" letter-spacing="3">CONSULTORÍA CONTABLE FISCAL</text>
+      </svg>
+      <span class="var-label">Fondo Marino</span>
+    </div>
+    <!-- Fondo verde -->
+    <div class="logo-box green">
+      <svg class="logo-svg" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="64" height="64" rx="4" fill="#1B2F6E"/>
+        <polygon points="2,66 30,2 66,2 66,30 38,66" fill="rgba(255,255,255,0.2)"/>
+        <rect x="16" y="16" width="36" height="36" rx="2" fill="white"/>
+        <text x="34" y="41" font-family="Montserrat,sans-serif" font-weight="900" font-size="22" fill="#1B2F6E" text-anchor="middle">Z</text>
+        <line x1="78" y1="8" x2="78" y2="68" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+        <text x="92" y="46" font-family="Montserrat,sans-serif" font-weight="800" font-size="30" fill="#FFFFFF" letter-spacing="2">LUZAR</text>
+        <text x="92" y="60" font-family="Montserrat,sans-serif" font-weight="500" font-size="8" fill="rgba(255,255,255,0.7)" letter-spacing="3">CONSULTORÍA CONTABLE FISCAL</text>
+      </svg>
+      <span class="var-label">Fondo Verde</span>
+    </div>
+    <!-- Isotipo solo -->
+    <div class="logo-box gray-bg">
+      <svg style="width:70px; height:70px;" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="66" height="66" rx="5" fill="#1B2F6E"/>
+        <polygon points="1,67 29,1 67,1 67,29 39,67" fill="#3AB548"/>
+        <polygon points="1,67 1,39 29,1" fill="#1B2F6E"/>
+        <rect x="15" y="15" width="38" height="38" rx="3" fill="white"/>
+        <text x="34" y="42" font-family="Montserrat,sans-serif" font-weight="900" font-size="24" fill="#1B2F6E" text-anchor="middle">Z</text>
+      </svg>
+      <span class="var-label">Isotipo</span>
+    </div>
+    <!-- Solo texto -->
+    <div class="logo-box white">
+      <div>
+        <div style="font-size:32px; font-weight:900; color:var(--green); letter-spacing:2px; line-height:1;">LUZAR<span style="color:var(--navy-dark);">®</span></div>
+        <div style="font-size:9px; font-weight:600; color:var(--navy); letter-spacing:3px; text-transform:uppercase; margin-top:4px;">Consultoría Contable Fiscal</div>
+      </div>
+      <span class="var-label" style="color:var(--gray-400);">Solo Wordmark</span>
+    </div>
+    <!-- Versión compacta -->
+    <div class="logo-box navy">
+      <div style="text-align:center;">
+        <svg style="width:50px; height:50px;" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="66" height="66" rx="5" fill="#3AB548"/>
+          <polygon points="1,67 29,1 67,1 67,29 39,67" fill="rgba(255,255,255,0.2)"/>
+          <rect x="15" y="15" width="38" height="38" rx="3" fill="white"/>
+          <text x="34" y="42" font-family="Montserrat,sans-serif" font-weight="900" font-size="24" fill="#3AB548" text-anchor="middle">Z</text>
+        </svg>
+        <div style="margin-top:8px; font-size:16px; font-weight:800; color:white; letter-spacing:3px;">LUZAR</div>
+      </div>
+      <span class="var-label">Versión App/Redes</span>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TAGLINES -->
+<div class="section">
+  <p class="section-label">04 — Mensajes de Marca</p>
+  <h2 class="section-title">Taglines y Propuesta de Valor</h2>
+  <div class="tagline-grid">
+    <div class="tagline-card">
+      <blockquote>Tu patrimonio, nuestra precisión.</blockquote>
+      <p class="tag-use">Tagline Principal</p>
+    </div>
+    <div class="tagline-card">
+      <blockquote>Contabilidad que construye confianza.</blockquote>
+      <p class="tag-use">Redes Sociales</p>
+    </div>
+    <div class="tagline-card">
+      <blockquote>Claridad fiscal para crecer sin límites.</blockquote>
+      <p class="tag-use">Propósito de Marca</p>
+    </div>
+    <div class="tagline-card">
+      <blockquote>Expertos en números, aliados en éxito.</blockquote>
+      <p class="tag-use">B2B / Empresarial</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- VALORES -->
+<div class="section">
+  <p class="section-label">05 — Valores de Marca</p>
+  <h2 class="section-title">Pilares Fundamentales</h2>
+  <div class="brand-values">
+    <div class="value-card">
+      <div class="value-num">01</div>
+      <h4>Confianza</h4>
+      <p>Somos el respaldo que nuestros clientes necesitan en cada decisión fiscal y contable.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">02</div>
+      <h4>Precisión</h4>
+      <p>Cada cifra importa. Trabajamos con exactitud y rigor en cada proceso que realizamos.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">03</div>
+      <h4>Claridad</h4>
+      <p>Traducimos la complejidad fiscal en información clara, accionable y comprensible.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">04</div>
+      <h4>Compromiso</h4>
+      <p>Nos involucramos con el éxito de nuestros clientes como si fuera nuestro propio.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">05</div>
+      <h4>Innovación</h4>
+      <p>Adoptamos las mejores herramientas y prácticas para mantener a nuestros clientes al día.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-num">06</div>
+      <h4>Integridad</h4>
+      <p>Actuamos con ética, transparencia y responsabilidad en todo lo que hacemos.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- VOZ DE MARCA -->
+<div class="section">
+  <p class="section-label">06 — Voz de Marca</p>
+  <h2 class="section-title">Personalidad y Tono</h2>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-icon" style="background:var(--green-light);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#3AB548" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Confiable</h4>
+      <p>Habla con seguridad y precisión. Sin jerga innecesaria.</p>
+    </div>
+    <div class="voice-card">
+      <div class="voice-icon" style="background:var(--navy-light);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0" stroke="#1B2F6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Cercano</h4>
+      <p>Trata al cliente como socio, no como número.</p>
+    </div>
+    <div class="voice-card">
+      <div class="voice-icon" style="background:var(--green-light);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="#3AB548" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Experto</h4>
+      <p>Demuestra conocimiento profundo sin presumirlo.</p>
+    </div>
+    <div class="voice-card">
+      <div class="voice-icon" style="background:var(--navy-light);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="#1B2F6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Proactivo</h4>
+      <p>Anticipa necesidades y ofrece soluciones antes de ser pedido.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PAPELERÍA -->
+<div class="section">
+  <p class="section-label">07 — Papelería Corporativa</p>
+  <h2 class="section-title">Aplicaciones de Marca</h2>
+  <div class="stationery-grid">
+    <!-- LETTERHEAD -->
+    <div class="letterhead">
+      <div class="letterhead-header">
+        <svg style="height:32px; width:auto;" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="2" width="34" height="34" rx="3" fill="#3AB548"/>
+          <polygon points="0,36 14,2 34,2 34,16 20,36" fill="rgba(255,255,255,0.18)"/>
+          <rect x="8" y="9" width="18" height="18" rx="2" fill="white"/>
+          <text x="17" y="22" font-family="Montserrat,sans-serif" font-weight="900" font-size="12" fill="#1B2F6E" text-anchor="middle">Z</text>
+          <line x1="42" y1="4" x2="42" y2="34" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <text x="50" y="22" font-family="Montserrat,sans-serif" font-weight="800" font-size="18" fill="white" letter-spacing="1">LUZAR</text>
+          <text x="50" y="32" font-family="Montserrat,sans-serif" font-weight="500" font-size="5" fill="#B8C3E3" letter-spacing="2">CONSULTORÍA CONTABLE FISCAL</text>
+        </svg>
+        <div style="text-align:right;">
+          <div style="font-size:10px; color:#B8C3E3; font-weight:600; letter-spacing:1px;">www.luzar.com.mx</div>
+          <div style="font-size:10px; color:#B8C3E3;">contacto@luzar.com.mx</div>
+        </div>
+      </div>
+      <div class="letterhead-body">
+        <div style="font-size:10px; color:var(--gray-400); margin-bottom:16px; font-weight:600; letter-spacing:1px;">MONTERREY, N.L. · JUNIO 2025</div>
+        <div class="letterhead-line">
+          <div class="line-placeholder" style="width:30%; background:var(--gray-200);"></div>
+        </div>
+        <div style="height:1px; background:var(--gray-100); margin:8px 0 14px;"></div>
+        <div class="letterhead-line"><div class="line-placeholder" style="width:100%;"></div></div>
+        <div class="letterhead-line"><div class="line-placeholder" style="width:95%;"></div></div>
+        <div class="letterhead-line"><div class="line-placeholder" style="width:88%;"></div></div>
+        <div class="letterhead-line"><div class="line-placeholder" style="width:92%;"></div></div>
+        <div class="letterhead-line"><div class="line-placeholder" style="width:70%;"></div></div>
+        <div style="height:14px;"></div>
+        <div class="letterhead-line"><div class="line-placeholder" style="width:100%;"></div></div>
+        <div class="letterhead-line"><div class="line-placeholder" style="width:82%;"></div></div>
+        <div class="letterhead-line"><div class="line-placeholder" style="width:90%;"></div></div>
+        <div style="margin-top:20px;">
+          <div class="line-placeholder" style="width:120px; height:32px; background:var(--navy-light); border-radius:4px;"></div>
+          <div class="line-placeholder" style="width:80px; height:8px; background:var(--gray-100); margin-top:6px;"></div>
+          <div style="font-size:10px; color:var(--green); font-weight:700; letter-spacing:1px; margin-top:4px;">CONTADOR PÚBLICO CERTIFICADO</div>
+        </div>
+      </div>
+      <div class="letterhead-footer">
+        <span>Luzar Consultoría Contable Fiscal S.C.</span>
+        <span>Monterrey, N.L. · México</span>
+      </div>
+    </div>
+
+    <!-- BUSINESS CARD -->
+    <div>
+      <div style="margin-bottom:16px;">
+        <div class="biz-card">
+          <div class="biz-card-front">
+            <div>
+              <svg style="height:28px; width:auto;" viewBox="0 0 140 28" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="28" height="28" rx="2" fill="#3AB548"/>
+                <rect x="7" y="7" width="14" height="14" rx="1" fill="white"/>
+                <text x="14" y="19" font-family="Montserrat,sans-serif" font-weight="900" font-size="10" fill="#1B2F6E" text-anchor="middle">Z</text>
+                <line x1="35" y1="3" x2="35" y2="25" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <text x="42" y="18" font-family="Montserrat,sans-serif" font-weight="800" font-size="16" fill="white" letter-spacing="1">LUZAR</text>
+              </svg>
+            </div>
+            <div style="position:relative; z-index:1;">
+              <div class="biz-name">Lic. Roberto Luzar</div>
+              <div class="biz-title">Director General · CPC</div>
+              <div class="biz-contact" style="margin-top:14px;">
+                <span>📞 +52 (81) 1234-5678</span>
+                <span>✉ roberto@luzar.com.mx</span>
+                <span>🌐 www.luzar.com.mx</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Reverso -->
+      <div style="background:var(--green); border-radius:12px; padding:2rem; text-align:center; min-height:130px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; box-shadow:0 4px 24px rgba(27,47,110,0.12);">
+        <svg style="width:48px; height:48px;" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="66" height="66" rx="5" fill="white" fill-opacity="0.2"/>
+          <rect x="16" y="16" width="36" height="36" rx="3" fill="white"/>
+          <text x="34" y="42" font-family="Montserrat,sans-serif" font-weight="900" font-size="24" fill="#3AB548" text-anchor="middle">Z</text>
+        </svg>
+        <div style="font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.8); font-weight:600;">Reverso de tarjeta</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- COMPONENTES DIGITALES -->
+<div class="section">
+  <p class="section-label">08 — Componentes UI</p>
+  <h2 class="section-title">Sistema de Diseño Digital</h2>
+  <div class="component-grid">
+    <!-- Botones -->
+    <div class="btn-showcase">
+      <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--green); margin-bottom:16px;">Botones</p>
+      <div class="btn-row">
+        <button class="btn btn-primary">Contactar</button>
+        <button class="btn btn-secondary">Ver Servicios</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-outline">Más Info</button>
+        <button class="btn btn-ghost">Descargar</button>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary btn-sm">Pequeño</button>
+        <button class="btn btn-primary">Normal</button>
+        <button class="btn btn-primary btn-lg">Grande</button>
+      </div>
+      <div style="margin-top:16px;">
+        <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--green); margin-bottom:12px;">Badges & Pills</p>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <span style="background:var(--green-light); color:var(--green-dark); padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700;">Fiscal</span>
+          <span style="background:var(--navy-light); color:var(--navy-dark); padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700;">Contable</span>
+          <span style="background:var(--green); color:white; padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700;">✓ Certificado</span>
+          <span style="background:var(--navy-dark); color:white; padding:4px 12px; border-radius:20px; font-size:11px; font-weight:700;">Nuevo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <div class="form-showcase">
+      <div class="form-title">
+        <span></span>
+        Contáctanos
+      </div>
+      <div class="form-field">
+        <label class="form-label">Nombre Completo</label>
+        <input type="text" class="form-input" placeholder="Tu nombre" readonly>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-input" placeholder="correo@empresa.com" readonly>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Servicio de Interés</label>
+        <select class="form-input">
+          <option>Contabilidad General</option>
+          <option>Consultoría Fiscal</option>
+          <option>Auditoría</option>
+        </select>
+      </div>
+      <button class="form-submit">Enviar Consulta →</button>
+    </div>
+  </div>
+
+  <!-- CARDS DE SERVICIO -->
+  <div style="margin-top:20px; display:grid; grid-template-columns: repeat(3,1fr); gap:14px;">
+    <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:12px; padding:1.5rem; border-top: 3px solid var(--green);">
+      <div style="width:40px; height:40px; background:var(--green-light); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 14l2 2 4-4M12 2v2m0 16v2M2 12h2m16 0h2" stroke="#3AB548" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h4 style="font-size:14px; font-weight:700; color:var(--navy-dark); margin-bottom:6px;">Contabilidad</h4>
+      <p style="font-size:12px; color:var(--gray-400); line-height:1.5;">Registros contables precisos y actualizados mes a mes.</p>
+    </div>
+    <div style="background:var(--navy-dark); border-radius:12px; padding:1.5rem; border-top: 3px solid var(--green);">
+      <div style="width:40px; height:40px; background:rgba(58,181,72,0.15); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3M9 7h2a2 2 0 012 2v0M9 7V5a2 2 0 012-2h4l5 5v3a2 2 0 01-2 2h-2" stroke="#3AB548" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h4 style="font-size:14px; font-weight:700; color:white; margin-bottom:6px;">Fiscal</h4>
+      <p style="font-size:12px; color:var(--navy-mid); line-height:1.5;">Cumplimiento y optimización fiscal para tu empresa.</p>
+    </div>
+    <div style="background:var(--white); border:1px solid var(--gray-200); border-radius:12px; padding:1.5rem; border-top: 3px solid var(--navy-dark);">
+      <div style="width:40px; height:40px; background:var(--navy-light); border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:12px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="#1B2F6E" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h4 style="font-size:14px; font-weight:700; color:var(--navy-dark); margin-bottom:6px;">Auditoría</h4>
+      <p style="font-size:12px; color:var(--gray-400); line-height:1.5;">Revisión independiente para mayor transparencia.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- REDES SOCIALES -->
+<div class="section">
+  <p class="section-label">09 — Redes Sociales</p>
+  <h2 class="section-title">Templates para Publicaciones</h2>
+  <div class="social-grid">
+    <!-- Post 1 -->
+    <div class="social-post">
+      <div class="post-image" style="background:var(--navy-dark);">
+        <div style="text-align:center; position:relative; z-index:1;">
+          <div style="font-size:36px; font-weight:900; color:var(--green); letter-spacing:2px;">SAT</div>
+          <div style="font-size:10px; letter-spacing:3px; color:var(--navy-mid); text-transform:uppercase; margin-top:4px; font-weight:600;">Declaración Anual</div>
+          <div style="width:60px; height:2px; background:var(--green); margin:10px auto;"></div>
+          <div style="font-size:11px; color:var(--navy-mid);">¿Listo para el cierre?</div>
+        </div>
+        <div style="position:absolute; bottom:10px; right:12px; font-size:9px; color:var(--navy-mid); font-weight:700; letter-spacing:1.5px;">LUZAR®</div>
+      </div>
+      <div class="post-caption">
+        <p>La declaración anual vence pronto. ¿Tu contabilidad está al día?</p>
+        <div class="hashtags">#DeclaraciónAnual #SAT #Luzar</div>
+      </div>
+    </div>
+    <!-- Post 2 -->
+    <div class="social-post">
+      <div class="post-image" style="background:var(--green);">
+        <div style="text-align:center;">
+          <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.8); letter-spacing:2px; text-transform:uppercase;">Tip del mes</div>
+          <div style="font-size:20px; font-weight:800; color:white; margin-top:6px; line-height:1.2; padding:0 20px;">Deduce más,<br>paga menos.</div>
+          <div style="width:40px; height:2px; background:rgba(255,255,255,0.5); margin:10px auto;"></div>
+          <div style="font-size:10px; color:rgba(255,255,255,0.7); font-style:italic;">Consulta a nuestros expertos</div>
+        </div>
+        <div style="position:absolute; bottom:10px; right:12px; font-size:9px; color:rgba(255,255,255,0.6); font-weight:700; letter-spacing:1.5px;">LUZAR®</div>
+      </div>
+      <div class="post-caption">
+        <p>Conoce las deducciones que tu empresa puede aprovechar este año.</p>
+        <div class="hashtags">#Fiscal #Contabilidad #TipLuzar</div>
+      </div>
+    </div>
+    <!-- Post 3 -->
+    <div class="social-post">
+      <div class="post-image" style="background:var(--navy-light);">
+        <div style="text-align:center;">
+          <svg style="width:52px; height:52px;" viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="66" height="66" rx="5" fill="#1B2F6E"/>
+            <polygon points="1,67 29,1 67,1 67,29 39,67" fill="#3AB548"/>
+            <polygon points="1,67 1,39 29,1" fill="#1B2F6E"/>
+            <rect x="15" y="15" width="38" height="38" rx="3" fill="white"/>
+            <text x="34" y="42" font-family="Montserrat,sans-serif" font-weight="900" font-size="24" fill="#1B2F6E" text-anchor="middle">Z</text>
+          </svg>
+          <div style="margin-top:8px; font-size:11px; font-weight:700; color:var(--navy-dark); letter-spacing:2px;">LUZAR</div>
+          <div style="font-size:10px; color:var(--gray-400); letter-spacing:1px; margin-top:2px;">CONSULTORÍA CONTABLE FISCAL</div>
+        </div>
+      </div>
+      <div class="post-caption">
+        <p>Somos tu aliado estratégico en materia contable y fiscal.</p>
+        <div class="hashtags">#Contabilidad #Monterrey #Luzar</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PATRÓN DE MARCA -->
+<div class="section">
+  <p class="section-label">10 — Elementos Gráficos</p>
+  <h2 class="section-title">Patrones y Texturas de Marca</h2>
+  <div class="pattern-showcase">
+    <!-- Patron Z repetido -->
+    <div style="flex:1;">
+      <svg viewBox="0 0 200 120" style="width:100%; border-radius:8px; background:rgba(255,255,255,0.04);">
+        <!-- Patrón de Z geométricas -->
+        <g opacity="0.2">
+          <text x="10" y="30" font-family="Montserrat" font-weight="900" font-size="28" fill="#3AB548">Z</text>
+          <text x="50" y="55" font-family="Montserrat" font-weight="900" font-size="20" fill="#3AB548">Z</text>
+          <text x="90" y="30" font-family="Montserrat" font-weight="900" font-size="28" fill="#3AB548">Z</text>
+          <text x="130" y="55" font-family="Montserrat" font-weight="900" font-size="20" fill="#3AB548">Z</text>
+          <text x="170" y="30" font-family="Montserrat" font-weight="900" font-size="28" fill="#3AB548">Z</text>
+          <text x="10" y="80" font-family="Montserrat" font-weight="900" font-size="20" fill="#3AB548">Z</text>
+          <text x="50" y="105" font-family="Montserrat" font-weight="900" font-size="28" fill="#3AB548">Z</text>
+          <text x="90" y="80" font-family="Montserrat" font-weight="900" font-size="20" fill="#3AB548">Z</text>
+          <text x="130" y="105" font-family="Montserrat" font-weight="900" font-size="28" fill="#3AB548">Z</text>
+          <text x="170" y="80" font-family="Montserrat" font-weight="900" font-size="20" fill="#3AB548">Z</text>
+        </g>
+      </svg>
+      <p style="font-size:11px; color:var(--navy-mid); text-align:center; margin-top:8px; font-weight:600; letter-spacing:2px; text-transform:uppercase;">Patrón Z — Fondos</p>
+    </div>
+
+    <!-- Lineas diagonales -->
+    <div style="flex:1;">
+      <svg viewBox="0 0 200 120" style="width:100%; border-radius:8px; background:rgba(255,255,255,0.04);">
+        <defs>
+          <pattern id="diag" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="20" stroke="#3AB548" stroke-width="1.5" opacity="0.25"/>
+          </pattern>
+        </defs>
+        <rect width="200" height="120" fill="url(#diag)" rx="8"/>
+        <!-- Isologo centrado -->
+        <rect x="76" y="28" width="48" height="48" rx="4" fill="rgba(58,181,72,0.15)" stroke="#3AB548" stroke-width="1" opacity="0.6"/>
+        <text x="100" y="58" font-family="Montserrat" font-weight="900" font-size="22" fill="white" text-anchor="middle" opacity="0.8">Z</text>
+      </svg>
+      <p style="font-size:11px; color:var(--navy-mid); text-align:center; margin-top:8px; font-weight:600; letter-spacing:2px; text-transform:uppercase;">Diagonal — Fondos Secundarios</p>
+    </div>
+
+    <!-- Cuadrícula de cuadrados -->
+    <div style="flex:1;">
+      <svg viewBox="0 0 200 120" style="width:100%; border-radius:8px; background:rgba(255,255,255,0.04);">
+        <g opacity="0.15" fill="none" stroke="#3AB548" stroke-width="0.8">
+          <rect x="10" y="10" width="16" height="16" rx="2"/>
+          <rect x="34" y="10" width="16" height="16" rx="2"/>
+          <rect x="58" y="10" width="16" height="16" rx="2"/>
+          <rect x="82" y="10" width="16" height="16" rx="2"/>
+          <rect x="106" y="10" width="16" height="16" rx="2"/>
+          <rect x="130" y="10" width="16" height="16" rx="2"/>
+          <rect x="154" y="10" width="16" height="16" rx="2"/>
+          <rect x="178" y="10" width="16" height="16" rx="2"/>
+          <rect x="10" y="34" width="16" height="16" rx="2"/>
+          <rect x="34" y="34" width="16" height="16" rx="2"/>
+          <rect x="58" y="34" width="16" height="16" rx="2"/>
+          <rect x="82" y="34" width="16" height="16" rx="2"/>
+          <rect x="106" y="34" width="16" height="16" rx="2"/>
+          <rect x="130" y="34" width="16" height="16" rx="2"/>
+          <rect x="154" y="34" width="16" height="16" rx="2"/>
+          <rect x="178" y="34" width="16" height="16" rx="2"/>
+          <rect x="10" y="58" width="16" height="16" rx="2"/>
+          <rect x="34" y="58" width="16" height="16" rx="2"/>
+          <rect x="58" y="58" width="16" height="16" rx="2"/>
+          <rect x="82" y="58" width="16" height="16" rx="2"/>
+          <rect x="106" y="58" width="16" height="16" rx="2"/>
+          <rect x="130" y="58" width="16" height="16" rx="2"/>
+          <rect x="154" y="58" width="16" height="16" rx="2"/>
+          <rect x="178" y="58" width="16" height="16" rx="2"/>
+          <rect x="10" y="82" width="16" height="16" rx="2"/>
+          <rect x="34" y="82" width="16" height="16" rx="2"/>
+          <rect x="58" y="82" width="16" height="16" rx="2"/>
+          <rect x="82" y="82" width="16" height="16" rx="2"/>
+          <rect x="106" y="82" width="16" height="16" rx="2"/>
+          <rect x="130" y="82" width="16" height="16" rx="2"/>
+          <rect x="154" y="82" width="16" height="16" rx="2"/>
+          <rect x="178" y="82" width="16" height="16" rx="2"/>
+          <rect x="10" y="100" width="16" height="16" rx="2"/>
+          <rect x="34" y="100" width="16" height="16" rx="2"/>
+          <rect x="58" y="100" width="16" height="16" rx="2"/>
+          <rect x="82" y="100" width="16" height="16" rx="2"/>
+          <rect x="106" y="100" width="16" height="16" rx="2"/>
+          <rect x="130" y="100" width="16" height="16" rx="2"/>
+          <rect x="154" y="100" width="16" height="16" rx="2"/>
+          <rect x="178" y="100" width="16" height="16" rx="2"/>
+        </g>
+      </svg>
+      <p style="font-size:11px; color:var(--navy-mid); text-align:center; margin-top:8px; font-weight:600; letter-spacing:2px; text-transform:uppercase;">Cuadrícula — Detalles</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="brand-footer">
+  <p>Luzar<span>®</span> Consultoría Contable Fiscal · Manual de Identidad Corporativa · <span>2025</span></p>
+  <p style="margin-top:8px; font-size:10px; color:rgba(255,255,255,0.3);">Confidencial · Uso Interno</p>
+</div>
+
+</body>
+</html>
