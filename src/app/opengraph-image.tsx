@@ -22,7 +22,7 @@ function dataUri(relPath: string) {
 
 export default async function Image() {
   const [f600, f400] = await Promise.all([loadFont(600), loadFont(400)]);
-  const logo = dataUri("public/logo-lockup-dark.png");
+  const logoPlate = dataUri("public/logo-opt1-plate.png"); // logo full-color sobre placa
   const mono = dataUri("src/app/icon.png");
 
   return new ImageResponse(
@@ -34,7 +34,7 @@ export default async function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: "60px 72px",
+          padding: "58px 70px",
           background:
             "linear-gradient(135deg, #0A1331 0%, #0D1B44 58%, #142768 100%)",
           fontFamily: "Fraunces",
@@ -45,28 +45,33 @@ export default async function Image() {
         <div
           style={{
             position: "absolute",
-            right: -140,
-            top: -160,
-            width: 560,
-            height: 560,
+            right: -150,
+            top: -170,
+            width: 540,
+            height: 540,
             borderRadius: 9999,
             display: "flex",
             background:
-              "radial-gradient(circle, rgba(58,181,72,0.30), rgba(58,181,72,0))",
+              "radial-gradient(circle, rgba(58,181,72,0.26), rgba(58,181,72,0))",
           }}
         />
         {/* Monograma marca de agua */}
         <img
           src={mono}
-          width={470}
-          height={470}
+          width={430}
+          height={430}
           alt=""
-          style={{ position: "absolute", right: -30, bottom: -70, opacity: 0.1 }}
+          style={{
+            position: "absolute",
+            right: -20,
+            bottom: -80,
+            opacity: 0.08,
+          }}
         />
 
-        {/* Logo */}
+        {/* Logo original (full-color) sobre placa — membrete prominente */}
         <div style={{ display: "flex" }}>
-          <img src={logo} height={68} alt="Luzar" />
+          <img src={logoPlate} width={486} height={213} alt="Luzar" />
         </div>
 
         {/* Titular */}
@@ -75,12 +80,12 @@ export default async function Image() {
             style={{
               display: "flex",
               flexWrap: "wrap",
-              fontSize: 76,
+              fontSize: 70,
               lineHeight: 1.04,
               fontWeight: 600,
               color: "#F4F6FC",
               letterSpacing: "-0.02em",
-              maxWidth: 880,
+              maxWidth: 860,
             }}
           >
             <span>Precisión&nbsp;que&nbsp;se&nbsp;</span>
@@ -90,11 +95,11 @@ export default async function Image() {
           <div
             style={{
               display: "flex",
-              fontSize: 30,
+              fontSize: 28,
               fontWeight: 400,
               color: "rgba(244,246,252,0.66)",
-              marginTop: 26,
-              maxWidth: 760,
+              marginTop: 22,
+              maxWidth: 740,
             }}
           >
             Consultoría contable y fiscal · Más de 25 años en el noreste de
@@ -110,9 +115,9 @@ export default async function Image() {
               alignItems: "center",
               background: "#3AB548",
               color: "#06122E",
-              fontSize: 26,
+              fontSize: 25,
               fontWeight: 600,
-              padding: "10px 28px",
+              padding: "9px 26px",
               borderRadius: 9999,
             }}
           >
@@ -121,7 +126,7 @@ export default async function Image() {
           <div
             style={{
               display: "flex",
-              fontSize: 24,
+              fontSize: 23,
               color: "rgba(244,246,252,0.5)",
             }}
           >
