@@ -20,6 +20,16 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    // Componentes vendored de 21st.dev / Aceternity / MagicUI: relajamos
+    // reglas de estilo de terceros (no es nuestro código fuente).
+    files: ["src/components/ui/**/*.{ts,tsx}"],
+    rules: {
+      "react-hooks/exhaustive-deps": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@next/next/no-img-element": "off",
+    },
+  },
 ];
 
 export default eslintConfig;
