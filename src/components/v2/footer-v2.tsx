@@ -27,14 +27,16 @@ export function FooterV2() {
           <div className="relative mx-auto flex size-full max-w-7xl flex-col justify-between gap-6 px-6 py-12 text-white/70">
             <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1.3fr]">
               <AnimatedContainer className="space-y-6">
-                {/* Placa con el mismo fondo frosted slate de la barra superior */}
-                <div className="inline-flex w-max items-center rounded-2xl border border-white/15 bg-[#c5cee4]/85 px-6 py-4 backdrop-blur-xl">
+                {/* Placa con el mismo fondo frosted slate de la barra superior.
+                    -ml-6 compensa el padding para alinear el logo con el del navbar;
+                    mismo tamaño que el navbar (h-14 / md:h-[4.25rem]). */}
+                <div className="-ml-6 inline-flex w-max items-center rounded-2xl border border-white/15 bg-[#c5cee4]/85 px-6 py-3.5 backdrop-blur-xl">
                   <Image
                     src="/logo-color.svg"
                     alt="Luzar Consultores"
                     width={300}
                     height={103}
-                    className="h-14 w-auto"
+                    className="h-14 w-auto md:h-[4.25rem]"
                   />
                 </div>
                 <p className="max-w-sm text-sm leading-relaxed text-white/55">
