@@ -2,12 +2,20 @@ import type { Metadata } from "next";
 import { NavbarV2 } from "@/components/v2/navbar-v2";
 import { HeroV2 } from "@/components/v2/hero-v2";
 import { Statement } from "@/components/v2/statement";
+import { ServicesV2 } from "@/components/v2/services-v2";
 import { IndustriesShowcase } from "@/components/v2/industries-showcase";
+import { ProcessV2 } from "@/components/v2/process-v2";
+import { WhyV2 } from "@/components/v2/why-v2";
+import { TestimonialsV2 } from "@/components/v2/testimonials-v2";
+import { FaqV2 } from "@/components/v2/faq-v2";
+import { CtaV2 } from "@/components/v2/cta-v2";
+import { FooterV2 } from "@/components/v2/footer-v2";
 import { Cursor } from "@/components/v2/cursor";
+import { WhatsappFloat } from "@/components/whatsapp-float";
 
 export const metadata: Metadata = {
-  title: "Luzar — v2 (dark editorial)",
-  description: "Prueba de dirección visual: dark editorial, image-led.",
+  title: "Luzar — Consultoría Contable y Fiscal",
+  description: "Precisión que se ve en resultados. Dirección visual v2.",
 };
 
 export default function V2Page() {
@@ -18,11 +26,16 @@ export default function V2Page() {
       <main>
         <HeroV2 />
         <Statement />
+        <ServicesV2 />
         <IndustriesShowcase />
+        <ProcessV2 />
+        <WhyV2 />
+        <TestimonialsV2 />
+        <FaqV2 />
+        <CtaV2 />
       </main>
-      <footer className="border-t border-white/10 bg-[#0a1331] py-10 text-center text-sm text-white/40">
-        Prueba de dirección v2 · Luzar Consultores
-      </footer>
+      <FooterV2 />
+      <WhatsappFloat />
     </div>
   );
 }

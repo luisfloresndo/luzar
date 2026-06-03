@@ -34,15 +34,15 @@ export function NavbarV2() {
           : "border-b border-transparent",
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#top" className="relative block h-11 w-40 md:h-12 md:w-48">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+        <a href="#top" className="block shrink-0">
           <Image
-            src="/logo-blanco.svg"
-            alt="Luzar Consultores"
-            fill
+            src="/logo-lockup-dark.png"
+            alt="Luzar — Consultoría Contable Fiscal"
+            width={330}
+            height={107}
             priority
-            sizes="192px"
-            className="object-contain object-left"
+            className="h-14 w-auto md:h-[4.25rem]"
           />
         </a>
 
