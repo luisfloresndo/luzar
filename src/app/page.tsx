@@ -14,10 +14,10 @@ import { WhatsappFloat } from "@/components/whatsapp-float";
 
 export default function Home() {
   return (
-    <div className="theme-dark relative min-h-screen cursor-none bg-[#0a1331] [&_*]:cursor-none">
+    <div className="theme-dark min-h-screen cursor-none bg-[#0a1331] [&_*]:cursor-none">
       <Cursor />
       <NavbarV2 />
-      <main className="relative z-10 bg-[#0a1331]">
+      <main>
         <HeroV2 />
         <Statement />
         <ServicesV2 />
