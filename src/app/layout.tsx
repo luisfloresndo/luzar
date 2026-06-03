@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
+import { Fraunces } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/smooth-scroll";
+
+// Display editorial de alto contraste (reemplaza el carácter "corporativo" anterior).
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://luzar.com.mx"),
@@ -41,7 +51,7 @@ export default function RootLayout({
           href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600&display=swap"
         />
       </head>
-      <body className="antialiased">
+      <body className={`${fraunces.variable} antialiased`}>
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

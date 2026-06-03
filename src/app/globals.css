@@ -51,6 +51,7 @@
   --color-green: var(--green);
   --color-green-dark: var(--green-dark);
   --color-green-soft: var(--green-soft);
+  --color-green-bright: var(--green-bright, #4fd96a);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
@@ -71,6 +72,7 @@
 
   --font-display: "Clash Display", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-editorial: var(--font-fraunces), ui-serif, Georgia, serif;
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -96,6 +98,31 @@
     transform: translateZ(0) rotate(360deg);
     }
   }
+}
+
+/* ════════════════════════════════════════════════════════════
+   TEMA OSCURO EDITORIAL (v2) — scoped a .theme-dark
+   Navy profundo de lienzo + verde eléctrico como único acento.
+   ════════════════════════════════════════════════════════════ */
+.theme-dark {
+  --background: #0a1331;
+  --surface: #11204d;
+  --foreground: #f4f6fc;
+  --muted: #18254f;
+  --muted-foreground: #9aa4c6;
+  --border: #24315f;
+  --green: #3ab548;
+  --green-bright: #4fd96a;
+  --green-dark: #2a8a35;
+  --card: #11204d;
+  --card-foreground: #f4f6fc;
+  --primary: #3ab548;
+  --primary-foreground: #06122e;
+  --accent: #3ab548;
+  --accent-foreground: #06122e;
+  --ring: #3ab548;
+  background: var(--background);
+  color: var(--foreground);
 }
 
 * {
