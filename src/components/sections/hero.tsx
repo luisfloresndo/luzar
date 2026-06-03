@@ -78,7 +78,7 @@ export function Hero() {
             rel="noopener noreferrer"
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-green px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-green/25 transition-transform hover:scale-[1.03]"
           >
-            Agenda tu diagnóstico sin costo
+            Déjanos asesorarte
             <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
           </a>
           <a

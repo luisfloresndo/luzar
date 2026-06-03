@@ -23,12 +23,12 @@ export function ServicesV2() {
     <section id="servicios" className="bg-[#0a1331]">
       <div className="mx-auto max-w-7xl px-6 pt-28 pb-4">
         <span className="font-editorial text-lg italic text-green-bright">
-          (Servicios)
+          (Servicios · Consultoría 360)
         </span>
         <h2 className="mt-4 max-w-4xl font-editorial text-5xl font-light leading-[1] tracking-tight text-white md:text-7xl">
-          Todo lo contable y fiscal,
+          Todo lo contable, fiscal y
           <br />
-          bajo un mismo techo.
+          administrativo, en un solo lugar.
         </h2>
       </div>
       <StickyScroll content={content} />

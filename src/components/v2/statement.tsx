@@ -39,7 +39,7 @@ export function Statement() {
           transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
           className="mt-8 max-w-4xl text-center font-editorial text-4xl font-light leading-[1.05] tracking-tight text-white md:text-7xl"
         >
-          Los números no <span className="italic text-green-bright">mienten</span>.
+          Más de 25 años <span className="italic text-green-bright">cuidando</span> tus números.
         </motion.h2>
       </LampContainer>
 

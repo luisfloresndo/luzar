@@ -12,7 +12,7 @@ export function CtaContact() {
     e.preventDefault();
     const text = `Hola Luzar, soy ${form.nombre || "—"} (${
       form.negocio || "—"
-    }). ${form.mensaje || "Quiero agendar un diagnóstico."}`;
+    }). ${form.mensaje || "Quiero recibir asesoría contable y fiscal."}`;
     window.open(
       `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(text)}`,
       "_blank",
@@ -28,12 +28,12 @@ export function CtaContact() {
               Da el primer paso
             </p>
             <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
-              Tu diagnóstico inicial es{" "}
-              <span className="text-green">sin costo</span>.
+              Hablemos de tu{" "}
+              <span className="text-green">situación</span> fiscal.
             </h2>
             <p className="mx-auto mt-5 max-w-md text-lg text-white/75 lg:mx-0">
-              Cuéntanos de tu negocio y te decimos exactamente cómo podemos
-              ayudarte. Sin compromiso.
+              Cuéntanos cómo está tu negocio y un experto te dice exactamente
+              cómo podemos ayudarte.
             </p>
             <div className="mt-7 space-y-1 text-sm text-white/70">
               <p>{CONTACT.phones.join(" · ")}</p>

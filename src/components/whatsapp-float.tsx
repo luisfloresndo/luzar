@@ -19,7 +19,7 @@ export function WhatsappFloat() {
       {show && (
         <motion.a
           href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
-            "Hola Luzar, me gustaría agendar un diagnóstico.",
+            "Hola Luzar, me gustaría recibir asesoría contable y fiscal.",
           )}`}
           target="_blank"
           rel="noopener noreferrer"

@@ -106,15 +106,15 @@ export const Header = () => {
     <div className="max-w-7xl relative mx-auto px-6 w-full left-0 top-0 pt-16 pb-24 md:pt-24">
       <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/85 backdrop-blur-sm">
         <span className="h-1.5 w-1.5 rounded-full bg-green-bright" />
-        Consultoría contable y fiscal · San Pedro Garza García
+        Consultoría contable y fiscal · Más de 25 años en el noreste de México
       </span>
       <h1 className="mt-8 font-editorial text-[3.5rem] font-light leading-[0.95] tracking-tight text-white sm:text-7xl md:text-[7.5rem]">
         Precisión que se<br />
         <span className="italic text-green-bright">ve</span> en resultados.
       </h1>
       <p className="mt-8 max-w-xl text-lg text-white/70 md:text-xl">
-        Contabilidad, planeación fiscal, nómina y defensa ante el SAT —
-        para empresas y emprendedores que no dejan nada al azar.
+        Contabilidad, planeación fiscal, nómina y cumplimiento ante el SAT,
+        con la atención cercana de un equipo experto.
       </p>
     </div>
   );

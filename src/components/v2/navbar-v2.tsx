@@ -65,7 +65,7 @@ export function NavbarV2() {
           rel="noopener noreferrer"
           className="hidden rounded-full bg-green px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-green/30 transition-transform hover:scale-[1.04] md:inline-flex"
         >
-          Agenda tu diagnóstico
+          Déjanos asesorarte
         </a>
       </nav>
     </motion.header>

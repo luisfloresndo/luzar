@@ -61,7 +61,7 @@ export function Navbar() {
           rel="noopener noreferrer"
           className="hidden rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.03] md:inline-flex"
         >
-          Agenda tu diagnóstico
+          Déjanos asesorarte
         </a>
 
         <button
@@ -101,7 +101,7 @@ export function Navbar() {
                 rel="noopener noreferrer"
                 className="mt-2 rounded-full bg-navy px-5 py-2.5 text-center text-sm font-semibold text-white"
               >
-                Agenda tu diagnóstico
+                Déjanos asesorarte
               </a>
             </ul>
           </motion.div>
