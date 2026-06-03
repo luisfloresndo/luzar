@@ -27,14 +27,16 @@ export function FooterV2() {
           <div className="relative mx-auto flex size-full max-w-7xl flex-col justify-between gap-6 px-6 py-12 text-white/70">
             <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1.3fr]">
               <AnimatedContainer className="space-y-6">
-                {/* Logo original full-color sobre placa: legible */}
-                <Image
-                  src="/logo-opt1-plate.png"
-                  alt="Luzar Consultores"
-                  width={460}
-                  height={202}
-                  className="h-[84px] w-auto"
-                />
+                {/* Placa con el mismo fondo frosted slate de la barra superior */}
+                <div className="inline-flex w-max items-center rounded-2xl border border-white/15 bg-[#c5cee4]/85 px-6 py-4 backdrop-blur-xl">
+                  <Image
+                    src="/logo-color.svg"
+                    alt="Luzar Consultores"
+                    width={300}
+                    height={103}
+                    className="h-14 w-auto"
+                  />
+                </div>
                 <p className="max-w-sm text-sm leading-relaxed text-white/55">
                   Precisión contable y fiscal para empresas y emprendedores en
                   San Pedro Garza García y todo Nuevo León.
