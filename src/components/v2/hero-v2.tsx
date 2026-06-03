@@ -21,8 +21,9 @@ const IMAGES = [
   "/images/industry-transporte.webp",
 ];
 
-const products = IMAGES.map((thumbnail) => ({
-  title: "Luzar Consultores",
+const products = IMAGES.map((thumbnail, i) => ({
+  // Título único por tarjeta: evita keys duplicadas en el muro (omitía imágenes).
+  title: `Luzar ${i + 1}`,
   link: "#contacto",
   thumbnail,
 }));

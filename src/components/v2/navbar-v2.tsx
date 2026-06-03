@@ -16,7 +16,7 @@ const LINKS = [
 export function NavbarV2() {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 32);
+    const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -27,20 +27,20 @@ export function NavbarV2() {
       initial={{ y: -90, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      // Barra CLARA esmerilada fija — color distinto al navy de la página
+      // para que el logo original (con su navy) resalte en cualquier scroll.
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-500",
-        scrolled
-          ? "border-b border-white/10 bg-[#0a1331]/80 backdrop-blur-xl"
-          : "border-b border-transparent",
+        "fixed inset-x-0 top-0 z-50 border-b border-[#0d1b44]/10 bg-[#f4f6fc]/80 backdrop-blur-xl transition-shadow duration-500",
+        scrolled && "shadow-[0_8px_30px_rgba(10,19,49,0.12)]",
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2.5">
         <a href="#top" className="block shrink-0">
           <Image
-            src="/logo-lockup-dark.png"
+            src="/logo-color.svg"
             alt="Luzar — Consultoría Contable Fiscal"
-            width={330}
-            height={107}
+            width={300}
+            height={103}
             priority
             className="h-14 w-auto md:h-[4.25rem]"
           />
@@ -51,7 +51,7 @@ export function NavbarV2() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+                className="text-sm font-medium text-navy-deep/70 transition-colors hover:text-navy"
               >
                 {l.label}
               </a>
@@ -63,9 +63,8 @@ export function NavbarV2() {
           href={`https://wa.me/${CONTACT.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative hidden overflow-hidden rounded-full border border-green/40 px-5 py-2.5 text-sm font-semibold text-white md:inline-flex"
+          className="hidden rounded-full bg-green px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-green/30 transition-transform hover:scale-[1.04] md:inline-flex"
         >
-          <span className="absolute inset-0 -z-10 translate-y-full bg-green transition-transform duration-300 group-hover:translate-y-0" />
           Agenda tu diagnóstico
         </a>
       </nav>
