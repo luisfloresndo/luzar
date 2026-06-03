@@ -1,11 +1,7 @@
 verifyDepsBeforeRun: false
-onlyBuiltDependencies:
-  - sharp
-  - unrs-resolver
-  - "@tailwindcss/oxide"
-  - esbuild
-  - msw
 allowBuilds:
-  msw: set this to true or false
-  sharp: set this to true or false
-  unrs-resolver: set this to true or false
+  msw: true
+  sharp: true
+  unrs-resolver: true
+  "@tailwindcss/oxide": true
+  esbuild: true
