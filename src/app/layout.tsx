@@ -12,14 +12,20 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
+// Dominio base para metadatos/OG. Usa el dominio de producción de Vercel
+// (luzar-blue.vercel.app) hasta que se conecte luzar.com.mx a este proyecto.
+const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "https://luzar-blue.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://luzar.com.mx"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Luzar — Consultoría Contable y Fiscal | San Pedro Garza García",
     template: "%s | Luzar Consultores",
   },
   description:
-    "Despacho contable y fiscal en San Pedro Garza García. Contabilidad, planeación fiscal, nómina, jurídico y trámites con precisión para empresas y emprendedores.",
+    "Despacho contable y fiscal en San Pedro Garza García. Más de 25 años: contabilidad, planeación fiscal, nómina, legal y trámites con precisión para empresas y emprendedores.",
   keywords: [
     "contabilidad",
     "asesoría fiscal",
@@ -35,7 +41,13 @@ export const metadata: Metadata = {
     siteName: "Luzar Consultores",
     title: "Luzar — Consultoría Contable y Fiscal",
     description:
-      "Soluciones contables y fiscales con precisión que impulsa tu negocio.",
+      "Precisión que se ve en resultados. Más de 25 años de experiencia contable y fiscal.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Luzar — Consultoría Contable y Fiscal",
+    description:
+      "Precisión que se ve en resultados. Más de 25 años de experiencia contable y fiscal.",
   },
 };
 
