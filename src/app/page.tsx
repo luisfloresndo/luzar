@@ -1,35 +1,35 @@
-import { Navbar } from "@/components/sections/navbar";
-import { Hero } from "@/components/sections/hero";
-import { TrustBar } from "@/components/sections/trust-bar";
-import { Services } from "@/components/sections/services";
-import { Industries } from "@/components/sections/industries";
-import { Process } from "@/components/sections/process";
-import { Metrics } from "@/components/sections/metrics";
-import { WhyLuzar } from "@/components/sections/why-luzar";
-import { Testimonials } from "@/components/sections/testimonials";
-import { Faq } from "@/components/sections/faq";
-import { CtaContact } from "@/components/sections/cta-contact";
-import { Footer } from "@/components/sections/footer";
+import { NavbarV2 } from "@/components/v2/navbar-v2";
+import { HeroV2 } from "@/components/v2/hero-v2";
+import { Statement } from "@/components/v2/statement";
+import { ServicesV2 } from "@/components/v2/services-v2";
+import { IndustriesShowcase } from "@/components/v2/industries-showcase";
+import { ProcessV2 } from "@/components/v2/process-v2";
+import { WhyV2 } from "@/components/v2/why-v2";
+import { CasosV2 } from "@/components/v2/casos-v2";
+import { FaqV2 } from "@/components/v2/faq-v2";
+import { CtaV2 } from "@/components/v2/cta-v2";
+import { FooterV2 } from "@/components/v2/footer-v2";
+import { Cursor } from "@/components/v2/cursor";
 import { WhatsappFloat } from "@/components/whatsapp-float";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
+    <div className="theme-dark min-h-screen cursor-none bg-[#0a1331] [&_*]:cursor-none">
+      <Cursor />
+      <NavbarV2 />
       <main>
-        <Hero />
-        <TrustBar />
-        <Services />
-        <Industries />
-        <Process />
-        <Metrics />
-        <WhyLuzar />
-        <Testimonials />
-        <Faq />
-        <CtaContact />
+        <HeroV2 />
+        <Statement />
+        <ServicesV2 />
+        <IndustriesShowcase />
+        <ProcessV2 />
+        <WhyV2 />
+        <CasosV2 />
+        <FaqV2 />
+        <CtaV2 />
       </main>
-      <Footer />
+      <FooterV2 />
       <WhatsappFloat />
-    </>
+    </div>
   );
 }

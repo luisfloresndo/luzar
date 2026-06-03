@@ -1,18 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useLenis } from "lenis/react";
 import { CONTACT } from "@/lib/content";
 
 // Botón flotante de WhatsApp (reemplaza el Joinchat del sitio actual).
 export function WhatsappFloat() {
   const [show, setShow] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 600);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // Lenis no dispara 'scroll' nativo — usamos su hook.
+  useLenis(({ scroll }: { scroll: number }) => setShow(scroll > 600));
 
   return (
     <AnimatePresence>
