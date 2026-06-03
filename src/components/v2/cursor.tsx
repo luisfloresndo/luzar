@@ -1,19 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useMotionValue, useSpring } from "motion/react";
+import { motion, useMotionValue } from "motion/react";
 
 // Cursor custom robusto: sobrevive cambio de pestaña y pointerleave (regla ATLAS).
+// Posición 1:1 (sin spring) para que siga el mouse a la misma velocidad.
 export function Cursor() {
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
-  const sx = useSpring(x, { stiffness: 500, damping: 40, mass: 0.4 });
-  const sy = useSpring(y, { stiffness: 500, damping: 40, mass: 0.4 });
   const [visible, setVisible] = useState(false);
   const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
-    // Solo en dispositivos con puntero fino (no touch).
     if (!window.matchMedia("(pointer: fine)").matches) return;
 
     const move = (e: PointerEvent) => {
@@ -41,16 +39,25 @@ export function Cursor() {
   return (
     <motion.div
       aria-hidden
-      className="pointer-events-none fixed left-0 top-0 z-[100] hidden h-6 w-6 items-center justify-center rounded-full border border-green-bright mix-blend-difference md:flex"
-      style={{ x: sx, y: sy, translateX: "-50%", translateY: "-50%" }}
+      className="pointer-events-none fixed left-0 top-0 z-[100] hidden h-7 w-7 items-center justify-center rounded-full border-2 border-green-bright md:flex"
+      // x/y crudos = 1:1 con el mouse, sin retraso.
+      style={{
+        x,
+        y,
+        translateX: "-50%",
+        translateY: "-50%",
+        boxShadow: "0 0 12px rgba(79,217,106,0.55)",
+      }}
       animate={{
         opacity: visible ? 1 : 0,
-        scale: hovering ? 2.2 : 1,
-        backgroundColor: hovering ? "rgba(79,217,106,0.15)" : "rgba(79,217,106,0)",
+        scale: hovering ? 2 : 1,
+        backgroundColor: hovering
+          ? "rgba(79,217,106,0.22)"
+          : "rgba(79,217,106,0)",
       }}
-      transition={{ duration: 0.18 }}
+      transition={{ duration: 0.15 }}
     >
-      <span className="h-1 w-1 rounded-full bg-green-bright" />
+      <span className="h-1.5 w-1.5 rounded-full bg-green-bright" />
     </motion.div>
   );
 }
