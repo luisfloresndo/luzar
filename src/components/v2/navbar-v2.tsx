@@ -23,11 +23,11 @@ export function NavbarV2() {
       initial={{ y: -90, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      // Barra CLARA esmerilada fija — color distinto al navy de la página
-      // para que el logo original (con su navy) resalte en cualquier scroll.
+      // Barra BLANCA fija (a solicitud del cliente) — el logo original resalta
+      // en cualquier scroll.
       className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-[#c5cee4]/85 backdrop-blur-xl transition-shadow duration-500",
-        scrolled && "shadow-[0_8px_30px_rgba(10,19,49,0.18)]",
+        "fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur-xl transition-shadow duration-500",
+        scrolled && "shadow-[0_8px_30px_rgba(10,19,49,0.12)]",
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2.5">
