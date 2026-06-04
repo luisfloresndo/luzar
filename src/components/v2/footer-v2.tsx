@@ -30,7 +30,7 @@ export function FooterV2() {
                 {/* Placa con el mismo fondo frosted slate de la barra superior.
                     -ml-6 compensa el padding para alinear el logo con el del navbar;
                     mismo tamaño que el navbar (h-14 / md:h-[4.25rem]). */}
-                <div className="-ml-6 inline-flex w-max items-center rounded-2xl border border-white/15 bg-[#c5cee4]/85 px-6 py-3.5 backdrop-blur-xl">
+                <div className="-ml-6 inline-flex w-max items-center rounded-2xl border border-black/5 bg-white/90 px-6 py-3.5 backdrop-blur-xl">
                   <Image
                     src="/logo-color.svg"
                     alt="Luzar Consultores"
